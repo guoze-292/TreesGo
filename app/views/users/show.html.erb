@@ -1,21 +1,118 @@
 <% provide(:title, @user.name) %>
 
- <div class="row">
-      <aside class="col-md-4">
-        <section class="user_info">
-<h1>
-            <%= gravatar_for @user %>
-            <%= @user.name %>
-          </h1>
-        </section>
-        <section class="stats">
-  </section>
-      </aside>
-       <div class="col-md-8">
+<div class="account">
+                <div class="col-sm-3 col-md-2 sidebar">
+                <br>
+                    <h2> <b> MY INFO </b> <i class="fa fa-user" style="font-size:36px"></i>  </h2>
+                    <i class="fa fa-user-circle-o" style="font-size:36px"> </i>
 
-</div>
-</div>
-<p>
+                    <p> <%= @user.name %> <i class="fa fa-leaf"></i> </p>
 
-  <%= @user.email %>
-</p>
+                    <p> Number of Trees Adopted: <%= @user.id %> </p>
+                    <p> Days Active: <%= @user.id %> </p>
+                    <button style="font-size:16px" class="btn btn-success"> Check Today</button>
+
+                    </div>
+            <div class="col-sm-9  col-sm-offset-3 col-md-offset-2 col-md-10 main top">
+
+              <h1 class="page-header"> My Tree </h1>
+              <br>
+              <div class="placeholders">
+                        <div class="col-xs-6 col-sm-3 placeholder" style="text-align: center;">
+                            <!-- <img src="image/tree_account2.jpg" class="img-responsive" alt="Generic placeholder thumbnail"> -->
+                            <%= image_tag("/image/tree_account2.jpg",class:"img-responsive",alt: "Generic placeholder thumbnail")%>
+
+                                <h4><span class="text-muted" class="name_change" onclick="nameChange()"> TreeTime </span></h4>
+                                <p> Tree Age: <b> 60 years </b> </p>
+                                <p> Tree Location: <b> Central Park, Kiely Blvd. </b> </p>
+
+                                <button class="btn btn-default btn-success" onclick="change()">Details</button>
+
+                                </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 placeholder" style="text-align: center;">
+                            <!-- <img src="images/tree_account.jpg" class="img-responsive" alt="Generic placeholder thumbnail"> -->
+                            <%= image_tag("/image/tree_account.jpg",class:"img-responsive",alt: "Generic placeholder thumbnail")%>
+                                <h4><span class="text-muted" class="name_change" onclick="nameChange()"> TreeTime </span></h4>
+                                <p> Tree Age: <b> 60 years </b> </p>
+                                <p> Tree Location: <b> Central Park, Kiely Blvd. </b> </p>
+                                <button class="btn btn-default btn-success"onclick="change()">Details</button>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 placeholder" style="text-align: center;">
+                            <%= image_tag("/image/tree_account1.jpg",class:"img-responsive",alt: "Generic placeholder thumbnail")%>
+                                <h4><span class="text-muted" class="name_change" onclick="nameChange()"> TreeTime </span></h4>
+                                <p> Tree Age: <b> 22 years </b> </p>
+                                <p> Tree Location: <b> 2914 El Camino Real </b> </p>
+                                <button class="btn btn-default btn-success" onclick="change()">Details</button>
+                        </div>
+
+                </div>
+
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main ">
+                    <h1 class="page-header">My Badges</h1>
+                    <div class="row placeholders">
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                            <!-- <img src="image/badge1.jpg" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail"> -->
+                            <%= image_tag("/image/badge1.jpg", width:"150",height:"150",class:"img-responsive",alt: "Generic placeholder thumbnail")%>
+                                <h4>Create an Account Badge</h4>
+                                <span class="text-muted">Congratulations, you created an account! You're on the road to make a difference.</span>
+                                </div>
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                            <!-- <img src="image/badge2.png" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail"> -->
+                            <%= image_tag("/image/badge2.png", width:"150",height:"150",class:"img-responsive",alt: "Generic placeholder thumbnail")%>
+                                <h4>Tree Hugger Badge</h4>
+                                <span class="text-muted">You have adopted 3 trees.</span>
+                                </div>
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                          <%= image_tag("/image/badge3.png", width:"150",height:"150",class:"img-responsive",alt: "Generic placeholder thumbnail")%>
+                            <!-- <img src="image/badge3.png" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail"> -->
+                                <h4>Tree Lover Badge</h4>
+                                <span class="text-muted">You have checked in on your tree(s) 100 days in a row. </span>
+                                </div>
+                        <div class="col-xs-6 col-sm-3 placeholder">
+                          <%= image_tag("/image/badge4.jpg", width:"150",height:"150",class:"img-responsive",alt: "Generic placeholder thumbnail")%>
+                            <!-- <img src="image/badge4.jpg" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail">  -->
+                                <h4>Tree Adoption Connoisseur</h4>
+                                <span class="text-muted">You have adopted 10 trees. </span>
+                                </div>
+                    </div>
+        </div>
+        <% if @user.admin %>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header"> Administrator Tools </h1>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Type</th>
+                  <th>Location</th>
+                  <th>Age</th>
+                  <th>status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody data-bind="foreach: trees">
+                <tr>
+                  <td><span class="name" data-bind="text: id">Tree ID</span></td>
+                  <td><span class="type" data-bind="text: type">Apple Tree</span></td>
+                  <td><span class="location"data-bind="text: location">SCU Library</span></td>
+                  <td><span class="age" data-bind="text: age"></span>10</td>
+                  <td><span class="status" data-bind="text: status">adpoted</span></td>
+                  <td><button type="button" class="btn btn-success btn-sm">Edit</button></td>
+                </tr>
+
+
+
+
+              </tbody>
+            </table>
+          </div>
+         </div>
+         <% end %>
+       </div>
+       <!--
+       // # Place all the behaviors and hooks related to the matching controller here.
+       // # All this logic will automatically be available in application.js.
+       // # You can use CoffeeScript in this file: http://coffeescript.org/ -->

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                    <div class="site-logo">
+                        <a href="#" class="brand">Trees GO</a>
+                    </div>
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="menu">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><%= link_to "Home",  root_path+"#"%></li>
+                            <li><%= link_to "Feature",  root_path+"#feature"%></li>
+                            <li><%= link_to "About",  root_path+"#about"%></li>
+
+                            <!-- <li class="special"><%= link_to "Sign In",  signup_path, style:"color:white;" %></li> -->
+                            <% if logged_in? %>
+                             <li><%= link_to "My Account", current_user,class:"special",style:"color:white;" %></li>
+                            <% else %>
+                             <li><%=link_to "log in",login_path,class:"special"%></li>
+                            <%end%>
+                            <li><%=link_to "Explore",users_path,class:"special",style:"color:white;"%></li>
+                        </ul>
+                    </div>
+                    <!-- /.Navbar-collapse -->
+            </div>
+        </div>
+</nav>

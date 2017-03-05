@@ -4,7 +4,15 @@ class UsersController < ApplicationController
   before_action :admin_user, only: [:destroy]
 
     def index
-      @users = User.paginate(page: params[:page])
+      # @users = User.
+      # @Trees = Tree
+      @trees = [
+        {name:"Broncos", id:110, type:"Apple Tree", location:"Santa Clara City Library", latitude:37.3446167260408,longitude:-121.932690069077, age:10},
+        {name:"Apple", id:110, type:"Palm Tree", location:"Santa Clara City Library", latitude:37.350266893316,longitude:-121.94374592494, age:20},
+        {name:"Tony", id:110, type:"Orange Tree", location:"Santa Clara City Library", latitude:37.3392813,longitude:-121.9382831, age:30},
+        {name:"SuperMike", id:110, type:"Junkrat Tree", location:"Santa Clara City Library", latitude:37.345256,longitude:-121.935864, age:40},
+        {name:"LULU", id:110, type:"LULU Tree", location:"Santa Clara City Library", latitude:37.348655,longitude:-121.946166, age:50}
+      ]
     end
 
     def new

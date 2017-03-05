@@ -5,7 +5,11 @@
 	   <%= full_title(yield(:title))%>
     </title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+  	<link href="css/animate.min.css" rel="stylesheet">
+  	<link href="css/animate.css" rel="stylesheet" />
+  	<link href="css/prettyPhoto.css" rel="stylesheet">
+    <!-- <link href="css/account.css" rel="stylesheet"> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim'%>
@@ -22,6 +26,17 @@
 
 
   </div>
+  <%= render 'layouts/footer' %>
+  <script src="javacsripts/jquery.prettyPhoto.js"></script>
+    <script src="javacsripts/jquery.isotope.min.js"></script>
+	<script src="javacsripts/wow.min.js"></script>
+	<script src="javacsripts/jquery.easing.min.js"></script>
+	<script src="javacsripts/main.js"></script>
+  <script src="javacsripts/knockout.js"></script>
+  <script src="javacsripts/app.js"></script>
+  <script async defer
+   src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAO_A3eA4F6A5_XjL9nyPWo1kQLP6LYerw&callback=initMap" onerror="mapError()">
+  </script>
 
   </body>
 </html>

@@ -5,6 +5,7 @@ var trees = [
   {name:"SuperMike", id:110, type:"Junkrat Tree", location:"Santa Clara City Library", latitude:37.345256,longitude:-121.935864, age:40},
   {name:"LULU", id:110, type:"LULU Tree", location:"Santa Clara City Library", latitude:37.348655,longitude:-121.946166, age:50}
 ];
+
 var currentInfoWindow = null;
 var currentAnimationMarker = null;
 
@@ -46,7 +47,9 @@ var initInfoWindows = function(trees) {
 
    function AppViewModel(){
      self = this;
+     self.keyword = ko.observable();
      self.trees = ko.observableArray(trees);
+     self.mytrees = ko.observableArray();
      self.trees().forEach(function(e){
        e.marker = new google.maps.Marker({
        position: {lat:e.latitude,lng:e.longitude},
@@ -55,7 +58,7 @@ var initInfoWindows = function(trees) {
        animation: google.maps.Animation.DROP
      });
    });
-   
+
    initInfoWindows(self.trees);
 
    self.selectMarker = function(e){
@@ -76,7 +79,31 @@ var initInfoWindows = function(trees) {
 
 
    };
- }
+   self.mytrees = ko.computed(function(){
+     if(!self.keyword()){
+       self.trees().forEach(function(e){
+         if(e.marker){
+             e.marker.setVisible(true);
+           }
+       });
+       return self.trees();
+     }
+     else if (self.myrestaurants()){
+       if(currentInfoWindow){currentInfoWindow.close();}
+       var temArray = ko.observableArray();
+       self.tress().forEach(function(e){
+       if(e.location.toLowerCase().indexOf(self.keyword().toLowerCase()) >= 0&&e.marker)
+       {   e.marker.setVisible(true);
+           temArray().push(e);
+       }
+       else if (e.marker)
+       {
+           e.marker.setVisible(false);
+       }
+         });
+     return temArray();
+     }
+ });
 
 
 
@@ -84,4 +111,5 @@ var initInfoWindows = function(trees) {
     ko.applyBindings(new AppViewModel());
 
 
+ }
  }

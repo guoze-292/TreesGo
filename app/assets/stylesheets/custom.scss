@@ -160,6 +160,27 @@ p {
     margin-left: 10px;
     margin-bottom:5px;
 }
+.navbar-fixed-top .nav li a:hover{
+
+    outline: 0;
+
+    background-color:white;
+
+color:#006622;
+
+}
+
+
+
+.navbar-fixed-top .nav .special a{
+
+    outline: 0;
+
+    background-color:#006622;
+
+    color:white;
+
+}
 
 .slider {
 	padding-top:90px;
@@ -693,7 +714,4 @@ textarea#message{
 	margin-bottom:20px;
 	font-size:30px;
 
-}
-.special:hover {
-  color: green;
 }

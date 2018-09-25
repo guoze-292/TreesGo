@@ -1,6 +1,6 @@
 # README
 
-##TreesGo
+## TreesGo
 TreesGo is a website for San Jose government to encourage citizens to join trees-adpotion acitivites.
 Ths idea comes from Pokemon Go, which users can adpot Pokemon and raise their Pokemon. On TreesGo, users can find a tree located at nearby community and adpot it by sending a request form to local government.
 This projects won second place at Hack4Humanity Hackathon 2017. 

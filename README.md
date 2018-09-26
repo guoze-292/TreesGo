@@ -6,7 +6,8 @@ Ths idea comes from Pokemon Go, which users can adpot Pokemon and raise their Po
 This projects won second place at Hack4Humanity Hackathon 2017. 
 
 ### Tree Management
- ![Screenshot1](TreesGo/Screen Shot1.png)
+ ![Screenshot](Screen Shot1.png)
+
 
 ### Badges System
  ![Screenshot2](TreesGo/Screen Shot2.png)

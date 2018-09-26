@@ -10,10 +10,10 @@ This projects won second place at Hack4Humanity Hackathon 2017.
 
 
 ### Badges System
- ![Screenshot2](TreesGo/ScreenShot2.png)
+ ![Screenshot2](/ScreenShot2.png)
 
 ### Adoption Map
- ![Screenshot3](TreesGo/ScreenShot3.png)
+ ![Screenshot3](/ScreenShot3.png)
 
 
 ## Features

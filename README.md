@@ -6,14 +6,14 @@ Ths idea comes from Pokemon Go, which users can adpot Pokemon and raise their Po
 This projects won second place at Hack4Humanity Hackathon 2017. 
 
 ### Tree Management
- ![Screenshot](Screen Shot1.png)
+ ![Screenshot](/ScreenShot1.png)
 
 
 ### Badges System
- ![Screenshot2](TreesGo/Screen Shot2.png)
+ ![Screenshot2](TreesGo/ScreenShot2.png)
 
 ### Adoption Map
- ![Screenshot3](TreesGo/Screen Shot3.png)
+ ![Screenshot3](TreesGo/ScreenShot3.png)
 
 
 ## Features
